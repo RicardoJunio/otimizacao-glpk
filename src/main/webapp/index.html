@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="BasicHttpAuthExample">
 
 <head>
 
@@ -12,7 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -26,6 +25,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/creative.css" rel="stylesheet">
+
 
     <!-- Temporary navbar container fix -->
     <style>
@@ -45,267 +45,7 @@
 <body id="page-top">
 
 <!-- Navigation -->
-<nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-            data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="container">
-        <a class="navbar-brand" href="#page-top">Otimização</a>
-        <div class="collapse navbar-collapse" id="navbarExample">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Mix">Mix de Produção</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Author">Autores</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<header class="masthead">
-    <div class="header-content">
-        <div class="header-content-inner">
-
-        </div>
-    </div>
-</header>
-
-<section class="bg-primary" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 text-center">
-                <h2 class="section-heading text-white">Otimização</h2>
-                <h2 class="section-heading text-white">Pesquisa operacional</h2>
-                <hr class="light">
-                <p class="text-faded">[...] é uma ciência aplicada voltada para a resolução de problemas reais.</p>
-                <p>SOBRAPO - Sociedade Brasileira de Pesquisa Operacional</p>
-                <p class="text-faded">PO é aplicação de métodos científicos a problemas complexos para
-                    auxiliar no processo de tomada de decisões de projeto, planejamento
-                    e operação em situações que requerem alocações eficientes de
-                    recursos escassos. Abordagem científica para tomada de decisão.</p>
-                <a class="btn btn-default btn-xl sr-button"
-                   href="http://www.sobrapo.org.br/" target="_blank">Conheça mais</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-second" id="">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 text-center">
-                <h2 class="section-heading text-white">Mas como que isso funciona?</h2>
-                <hr class="light">
-
-                <p>É bem tranquilo, o Mix de produção busca de dar o melhor do melhor,<b>o ponto ótimo</b>, você nos passa alguns dados e nós, com ajuda do GLPK, lhe entregamos informações para que você tome a melhor decisão estratégica para a sua produção.</p>
-                <p>Coloquemos que você fabrique dois produtos diferentes, mas que utilizem os mesmo itens porém em proporções diferentes, cada produto tem um valor de lucro, como saber qual produto você deve fabricar mais, para consumir o seu estoque sem a necessidade de comprar mais matéria prima e ao mesmo tempo, com o maior lucro possível?</p>
-                <p>Bom, não precisa mais se preocupar com isso, nos informe sua necessidade e lhe indicaremos a melhor decisão a ser tomada.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="Mix">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Mix de Produção</h2>
-                <div class="container text-center">
-                    <p>Entre com os dados do seu mix de produção no fomulário abaixo.</p>
-                    <p>Você deve informar quais serão os produtos de sua produção, em seguida quais são os itens
-                    gastos e as quantidades para cada um dos produtos, em seguida informe a disponibilidade existende
-                    em seu estoque para cada um dos itens.</p>
-                </div>
-                <hr class="primary">
-
-                <h2 class="section-heading">Informe os nomes das variáveis</h2>
-                <div class="container">
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Produto 01:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="p1name" placeholder="Nome do produto 01" name="p1name">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Produto 02:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="p2name" placeholder="Nome do produto 02" name="p2name">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Item 01:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="i1name" placeholder="Nome do item 01" name="i1name">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Item 02:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="i2name" placeholder="Nome do item 01" name="i2name">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Item 03:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="i3name" placeholder="Nome do item 01" name="i3name">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <br>
-                <h2 class="section-heading">Informe as quantidades gastas para a produção de cada item</h2>
-                <div class="container">
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Produto 01:</label>
-
-                            <!--item-->
-                            <br>
-                            <br>
-                            <div class="col-sm-1"></div>
-                            <label class="control-label col-sm-2">Item 1:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="p1i1" placeholder="1º Item" name="p1i1">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="col-sm-1"></div>
-                            <label class="control-label col-sm-2">Item 2:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="p1i2" placeholder="2º Item" name="p1i2">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="col-sm-1"></div>
-                            <label class="control-label col-sm-2">Item 3:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="p1i3" placeholder="3º Item" name="p1i3">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" >Produto 02:</label>
-
-                            <!--item-->
-                            <br>
-                            <br>
-                            <div class="col-sm-1"></div>
-                            <label class="control-label col-sm-2">Item 1:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="p2i1" placeholder="1º Item" name="p2i1">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="col-sm-1"></div>
-                            <label class="control-label col-sm-2">Item 2:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="p2i2" placeholder="2º Item" name="p2i2">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="col-sm-1"></div>
-                            <label class="control-label col-sm-2">Item 3:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="p2i3" placeholder="3º Item" name="p2i3">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" >Disponibilidade Total:</label>
-
-                            <!--item-->
-                            <br>
-                            <br>
-                            <div class="col-sm-1"></div>
-                            <label class="control-label col-sm-2">Item 1:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="di1" placeholder="1º Item" name="di1">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="col-sm-1"></div>
-                            <label class="control-label col-sm-2">Item 2:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="di2" placeholder="2º Item" name="di2">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="col-sm-1"></div>
-                            <label class="control-label col-sm-2">Item 3:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="di3" placeholder="3º Item" name="di3">
-                            </div>
-                        </div>
-
-                    </form>
-                    <br>
-                    <a class="btn btn-mix btn-xl sr-button"
-                       href="result.html" >Submeter para analise</a>
-                    <br>
-                    <br>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-    <div class="call-to-action bg-dark">
-        <div class="container text-center">
-            <h2>Processamento executado através do GLPK</h2>
-            <img src="img/glpk_white.png">
-            <br>
-            <br>
-            <p>Para maiores informações sobre a plataforma GNU Linear Programming Kit, acesse o site do projeto.</p>
-            <a class="btn btn-default btn-xl sr-button" href="https://www.gnu.org/software/glpk/" target="_blank">GLPK</a>
-        </div>
-    </div>
-
-</section>
-
-
-
-
-<section id="Author">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 offset-lg-2 text-center">
-                <h2 class="section-heading">Nós fizemos</h2>
-                <hr class="primary">
-                <div class="col-lg-9 offset-lg-2 text-center"></div>
-
-            </div>
-
-            <div class="col-lg-5 text-center">
-                <img src="img/ricardo.png">
-                <p>Ricardo Junio</p>
-            </div>
-
-            <div class="col-lg-5 offset-lg-2 text-center">
-                <img src="img/thiago.png">
-                <p>Thiago Rodrigo</p>
-             </div>
-        </div>
-        <br>
-        <br>
-        <footer>
-            <div class="footer">
-                <p class="pull-right"><a href="#">Back to top</a></p>
-                <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-                <p>Produzido por Ricardo J. e Thiago R. com Bootstrap, HTML 5, CSS 3, Java, Azure, GUSEK e GLPK</p>
-                <p>codificado no IntelliJ e disponível no Git Hub</p>
-            </div>
-
-        </footer>
-    </div>
-</section>
+<main ng-view></main>
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
@@ -319,6 +59,16 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/creative.min.js"></script>
+
+
+<script src="//code.angularjs.org/1.2.20/angular.js"></script>
+<script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+<script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+<script src="scripts/app.js"></script>
+<script src="pages/authentication/services.js"></script>
+<script src="pages/authentication/controllers.js"></script>
+<script src="pages/home/controllers.js"></script>
+
 
 </body>
 
