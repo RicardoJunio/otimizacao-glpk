@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('Mix')
+angular.module('Help')
 
-.controller('MixController',
+.controller('HelpController',
     ['$scope',
     function ($scope) {
 
 
       }
 
-    }]);
+    ]);

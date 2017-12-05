@@ -1,0 +1,198 @@
+<!-- Navigation -->
+<nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">Otimização</a>
+        <div class="collapse navbar-collapse" id="navbarExample">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#/help">Ajuda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section id="Mix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Mix de Produção</h2>
+                <div class="container text-center">
+                    <p>Entre com os dados do seu mix de produção no fomulário abaixo.</p>
+                    <p>Você deve informar quais serão os produtos de sua produção, em seguida quais são os itens
+                        gastos e as quantidades para cada um dos produtos, em seguida informe a disponibilidade
+                        existende
+                        em seu estoque para cada um dos itens.</p>
+                </div>
+                <hr class="primary">
+
+                <h2 class="section-heading">Informe os produtos a serem analisados</h2>
+                <br>
+                <div class="container">
+                    <form class="form-horizontal">
+
+                        <div class="container">
+                            <div id="dynamicDiv" class="row">
+                                <p>
+                                <div class="col-sm-12">
+                                    <label>Produto 01:</label>
+                                    <input type="text" id="x.nome" ng-model="x.nome" size="35" value=""
+                                           placeholder="Nome do produto"/>
+                                    <input type="text" id="x.valor" ng-model="x.valor" size="35" value=""
+                                           placeholder="Valor do produto"/>
+                                </div>
+                                <div class="col-sm-12">
+                                    <label>Produto 02:</label>
+                                    <input type="text" id="y.nome" ng-model="y.nome" size="35" value=""
+                                           placeholder="Nome do produto"/>
+                                    <input type="text" id="y.valor" ng-model="y.valor" size="35" value=""
+                                           placeholder="Valor do produto"/>
+                                </div>
+
+
+                                <!--<a class="btn btn-danger" href="javascript:void(0)" id="remInput">-->
+                                <!--Remover produto-->
+                                <!--</a>-->
+                                </p>
+                            </div>
+
+                            <!--<a class="btn btn-primary" ng-click="count = count + 1" href="javascript:void(0)"-->
+                            <!--id="addInput">-->
+                            <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
+                            <!--Add Produto-->
+                            <!--</a>-->
+                        </div>
+                    </form>
+                    <script>
+			         $(function () {
+			            var scntDiv = $('#dynamicDiv');
+			             $(document).on('click', '#addInput', function () {
+			              $('<p>'+
+			                    '<label>Produto:</label>'+
+                                    '<input type="text" id="x.nome" ng-model="x.nome" size="35" value="" placeholder="Nome do produto"/>'+
+                                    '<input type="text" id="x.valor" ng-model="x.valor" size="35" value="" placeholder="Valor do produto"/>'+
+                                    '<a class="btn btn-danger" href="javascript:void(0)" id="remInput">'+
+                                        'Remover produto'+
+                                    '</a>'+
+					       '</p>').appendTo(scntDiv);
+			        return false;
+			          });
+			          $(document).on('click', '#remInput', function () {
+		                 $(this).parents('p').remove();
+			              return false;
+			            });
+			        });
+
+
+
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<form class="col-lg-8 offset-lg-2 text-center" ng-submit="table()">
+    <button type="submit" class="btn-toggle btn btn-default btn-xl sr-button " data-element="#Data">
+        Clique aqui para inserir os materiais
+    </button>
+    <br>
+    <input type="submit" value="Carregar">
+</form>
+<section id="Data">
+
+    <div class="container">
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>{{prod1}}</th>
+                    <th>{{prod2}}</th>
+                    <th>Disponibilidade</th>
+                </tr>
+                </thead>
+                <tbody>
+                <div id="DynamicCol">
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" size="16" value="" id="m1.material"
+                                   placeholder="Nome do material">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" size="16" value="" id="m1.prod1"
+                                   placeholder="Quant. para esse produto">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" size="16" value="" id="m1.prod2"
+                                   placeholder="Quant. para esse produto">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" size="16" value="" id="m1.disponibilidade"
+                                   placeholder="Disponibilidade em estoque">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" size="16" value="" id="m2.material"
+                                   placeholder="Nome do material">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" size="16" value="" id="m2.prod1"
+                                   placeholder="Quant. para esse produto">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" size="16" value="" id="m2.prod2"
+                                   placeholder="Quant. para esse produto">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" size="16" value="" id="m2.disponibilidade"
+                                   placeholder="Disponibilidade em estoque">
+                        </td>
+                    </tr>
+                </div>
+
+                </tbody>
+            </table>
+            <!--<a class="btn btn-primary" href="javascript:void(0)"-->
+               <!--id="addColt">-->
+                <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
+                <!--Add Material-->
+            <!--</a>-->
+        </div>
+    </div>
+</section>
+<script>
+$(function(){
+    $(".btn-toggle").click(function(e){
+        e.preventDefault();
+        el = $(this).data('element');
+        $(el).toggle();
+    });
+});
+
+
+
+
+</script>
+
+
+<br>
+
+
+
+
+
+
+

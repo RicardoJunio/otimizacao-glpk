@@ -1,16 +1,16 @@
 'use strict';
 
-var app = angular.module("myApp", []);
-
 // declare modules
 angular.module('Home', []);
 angular.module('Authentication', []);
-angular.module('Mix', []);
+angular.module('Mixproducao', []);
+angular.module('Help', []);
 
 angular.module('BasicHttpAuthExample', [
     'Home',
     'Authentication',
-    'Mix',
+    'Mixproducao',
+    'Help',
     'ngRoute',
     'ngCookies'
 ])
@@ -27,8 +27,12 @@ angular.module('BasicHttpAuthExample', [
             templateUrl: 'pages/authentication/views/login.html'
         })
         .when('/mix', {
-        controller:'MixController',
-        templateUrl: 'pages/inside/mix/views/mix.html'
+            controller: 'ProducaoController',
+            templateUrl: 'pages/mixProducao/mixhome/views/mixhome.html'
+        })
+        .when('/help', {
+            controller:'HelpController',
+            templateUrl: 'pages/mixProducao/help/help.html'
         })
 
        .otherwise({ redirectTo: '/' });
